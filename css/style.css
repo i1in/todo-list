@@ -1,0 +1,162 @@
+:root {
+  --color-primary: #121212;
+  --background: #e6e6eb;
+  --primary: #f8f8ff;
+  --border-radius: 0.9rem;
+  --border-primary: 0.1px solid rgba(0, 0, 0, 0.1);
+  --border-primary-color: rgba(0, 0, 0, 0.1);
+  --font-family: system-ui, -apple-system, BlinkMacSystemFont, "Segoe UI",
+    Roboto, Oxygen, Ubuntu, Cantarell, "Open Sans", "Helvetica Neue", sans-serif;
+}
+
+html {
+  box-sizing: border-box;
+}
+
+*,
+*::after,
+*::before {
+  box-sizing: inherit;
+  margin: 0;
+  padding: 0;
+}
+
+span,
+p,
+h1,
+h2,
+h3,
+*::after {
+  font-family: var(--font-family);
+}
+
+body {
+  background-color: var(--background);
+}
+
+.task-header {
+  padding: 16px;
+  color: var(--background);
+  background-color: lightskyblue;
+}
+
+.board-app__main {
+  display: flex;
+  flex-direction: column;
+  padding: 36px;
+  gap: 36px;
+}
+.board-app__main .task-adder__wrapper {
+  display: flex;
+  flex-direction: column;
+  padding: 24px;
+  gap: 16px;
+  background-color: var(--primary);
+  width: -moz-fit-content;
+  width: fit-content;
+  border-radius: var(--border-radius);
+}
+.board-app__main .task-adder__wrapper .task-adder__title {
+  color: var(--color-primary);
+}
+.board-app__main .task-adder__wrapper .task-adder__inputs {
+  display: flex;
+  gap: 8px;
+}
+.board-app__main .task-adder__wrapper .task-adder__inputs .task-adder__input {
+  padding: 8px;
+  border-radius: var(--border-radius);
+  border: var(--border-primary);
+  background-color: var(--background);
+}
+.board-app__main .task-adder__wrapper .task-adder__inputs .task-adder__button {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  color: #121212;
+  padding: 4px;
+  border-radius: var(--border-radius);
+  border: var(--border-primary);
+  background-color: var(--background);
+  cursor: pointer;
+}
+.board-app__main .task-adder__wrapper .task-adder__inputs .task-adder__button .task-adder__button-text {
+  font-weight: 600;
+}
+.board-app__main .taskboard {
+  display: flex;
+  flex-direction: column;
+  gap: 12px;
+}
+.board-app__main .task-board__lists {
+  display: flex;
+  justify-content: space-between;
+}
+.board-app__main .task-board__lists .task-board__list {
+  display: flex;
+  flex-direction: column;
+  width: 300px;
+  gap: 12px;
+}
+.board-app__main .task-board__lists .task-board__list .task-list__title {
+  width: -moz-fit-content;
+  width: fit-content;
+  padding: 12px 20px 12px 20px;
+  border-radius: var(--border-radius);
+}
+.board-app__main .task-board__lists .task-board__list .tasks {
+  display: flex;
+  flex-direction: column;
+  gap: 8px;
+}
+.board-app__main .task-board__lists .task-board__list .tasks .task {
+  display: flex;
+  align-items: center;
+  padding: 20px;
+  background-color: var(--primary);
+  border-radius: var(--border-radius);
+  color: var(--color-primary);
+}
+.board-app__main .task-board__lists .task-board__list#backlog .task-list__title {
+  color: rgba(0, 0, 0, 0.6);
+  background-color: rgba(0, 0, 0, 0.3);
+}
+.board-app__main .task-board__lists .task-board__list#backlog .task {
+  border-left: 5px solid rgba(0, 0, 0, 0.3);
+}
+.board-app__main .task-board__lists .task-board__list#in-process .task-list__title {
+  color: rgba(0, 0, 255, 0.6);
+  background-color: rgba(0, 0, 255, 0.3);
+}
+.board-app__main .task-board__lists .task-board__list#in-process .task {
+  border-left: 5px solid rgba(0, 0, 255, 0.3);
+}
+.board-app__main .task-board__lists .task-board__list#completed > .task-list__title {
+  color: rgba(0, 128, 0, 0.9);
+  background-color: rgba(0, 128, 0, 0.3);
+}
+.board-app__main .task-board__lists .task-board__list#completed .task {
+  border-left: 5px solid rgba(0, 128, 0, 0.3);
+}
+.board-app__main .task-board__lists .task-board__list#trashbin > .task-list__title {
+  color: rgba(255, 0, 0, 0.9);
+  background-color: rgba(255, 0, 0, 0.3);
+}
+.board-app__main .task-board__lists .task-board__list#trashbin .task {
+  border-left: 5px solid rgba(255, 0, 0, 0.3);
+}
+.board-app__main .clear-button {
+  display: flex;
+  justify-content: end;
+}
+.board-app__main .clear-button .clear-button__red {
+  display: flex;
+  justify-content: center;
+  padding: 8px;
+  gap: 4px;
+  background-color: rgba(255, 0, 0, 0.8);
+  border-radius: var(--border-radius);
+  border: var(--border-primary);
+  color: var(--primary);
+  cursor: pointer;
+}/*# sourceMappingURL=style.css.map */

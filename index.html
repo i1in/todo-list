@@ -1,0 +1,122 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <link rel="stylesheet" href="css/style.css" />
+    <title>Document</title>
+  </head>
+  <body>
+    <header class="task__header">
+      <h1 class="header__title">Список задач</h1>
+    </header>
+    <main class="task__content">
+      <div class="task-adder__wrapper">
+        <h2 class="task-adder__title">Новая задача</h2>
+        <div class="task-adder__inputs">
+          <input
+            class="task-adder__input"
+            type="text"
+            name="task-adder__input"
+            id="task-input"
+          />
+          <button class="task-adder__button" type="button">
+            <svg
+              xmlns="http://www.w3.org/2000/svg"
+              width="32"
+              height="32"
+              viewBox="0 0 100 100"
+            >
+              <g fill="none" stroke="currentColor" stroke-width="4">
+                <line x1="50" y1="10" x2="50" y2="90" />
+                <line x1="10" y1="50" x2="90" y2="50" />
+              </g>
+            </svg>
+          </button>
+        </div>
+      </div>
+      <div class="task-board">
+        <div class="task-board__list" id="backlog">
+          <h2 class="task-list__title">Бэклог</h2>
+          <div class="tasks">
+            <div class="task">
+              <h3 class="task-title">Сделать лабораторную</h3>
+            </div>
+            <div class="task">
+              <h3 class="task-title">Выучить JS</h3>
+            </div>
+            <div class="task">
+              <h3 class="task-title">Погулять</h3>
+            </div>
+          </div>
+        </div>
+        <div class="task-board__list" id="in-process">
+          <h2 class="task-list__title">В процессе</h2>
+          <div class="tasks">
+            <div class="tasks">
+              <div class="task">
+                <h3 class="task-title">Сделать лабораторную</h3>
+              </div>
+              <div class="task">
+                <h3 class="task-title">Выучить JS</h3>
+              </div>
+              <div class="task">
+                <h3 class="task-title">Погулять</h3>
+              </div>
+            </div>
+          </div>
+        </div>
+        <div class="task-board__list" id="completed">
+          <h2 class="task-list__title">Готово</h2>
+          <div class="tasks">
+            <div class="tasks">
+              <div class="task">
+                <h3 class="task-title">Сделать лабораторную</h3>
+              </div>
+              <div class="task">
+                <h3 class="task-title">Выучить JS</h3>
+              </div>
+              <div class="task">
+                <h3 class="task-title">Погулять</h3>
+              </div>
+            </div>
+          </div>
+        </div>
+        <div class="task-board__list" id="trashbin">
+          <h2 class="task-list__title">Корзина</h2>
+          <div class="tasks">
+            <div class="tasks">
+              <div class="task">
+                <h3 class="task-title">Сделать лабораторную</h3>
+              </div>
+              <div class="task">
+                <h3 class="task-title">Выучить JS</h3>
+              </div>
+              <div class="task">
+                <h3 class="task-title">Погулять</h3>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+      <div class="clear-button">
+        <button class="clear-button__red">
+          <svg
+            xmlns="http://www.w3.org/2000/svg"
+            viewBox="0 0 24 24"
+            width="24"
+            height="24"
+          >
+            <path
+              d="M7 4V2h10v2h3v2H4V6h3zm3 2v12h4V6H10zM5 8v12h14V8H5z"
+              fill="none"
+              stroke="currentColor"
+              stroke-width="2"
+            />
+          </svg>
+          <h3>Очистить</h3>
+        </button>
+      </div>
+    </main>
+  </body>
+</html>

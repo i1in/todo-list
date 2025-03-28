@@ -1,0 +1,27 @@
+{
+    "liveServer.settings.port": 5501,
+    "liveSassCompile.settings.compileOnWatch": false,
+    "liveSassCompile.settings.watchOnLaunch": true,
+    "liveSassCompile.settings.useNewCompiler": true,
+    "liveSassCompile.settings.showOutputWindowOn": "Warning",
+    "liveSassCompile.settings.formats": [
+        {
+            "format": "expanded",
+            "extensionName": ".css",
+            "savePath": null,
+            "savePathReplacementPairs": {
+                "/sass/": "/css/"
+            }
+        },
+        {
+            "format": "compressed",
+            "extensionName": "-min.css",
+            "savePath": null,
+            "savePathReplacementPairs": {
+                "/sass/": "/css/"
+            },
+            "generateMap": false
+        }
+    ],
+    "djlint.showInstallError": false
+}

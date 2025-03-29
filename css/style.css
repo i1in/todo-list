@@ -90,7 +90,7 @@ body {
 }
 .board-app__main .task-board__lists {
   display: flex;
-  justify-content: space-between;
+  justify-content: space-around;
 }
 .board-app__main .task-board__lists .task-board__list {
   display: flex;

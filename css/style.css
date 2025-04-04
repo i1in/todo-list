@@ -90,12 +90,12 @@ body {
 }
 .board-app__main .task-board__lists {
   display: flex;
-  justify-content: space-around;
+  justify-content: space-between;
 }
 .board-app__main .task-board__lists .task-board__list {
   display: flex;
   flex-direction: column;
-  width: 300px;
+  width: 250px;
   gap: 12px;
 }
 .board-app__main .task-board__lists .task-board__list .task-list__title {
@@ -159,4 +159,4 @@ body {
   border: var(--border-primary);
   color: var(--primary);
   cursor: pointer;
-}/*# sourceMappingURL=style.css.map */
+}

@@ -16,15 +16,9 @@ function createElement(template) {
 
 
 function render(component, container, place = RenderPosition.BEFOREEND) {
+  console.warn(container)
   container.insertAdjacentElement(place, component.getElement());
 }
 
-function renderAll(Component, listOfContainers) {
-  listOfContainers.forEach((container) => {
-    const component = new Component();
-    render(component, container);
-  });
-}
 
-
-export { RenderPosition, createElement, render, renderAll };
+export { RenderPosition, createElement, render };

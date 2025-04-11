@@ -1,32 +1,33 @@
+// task-board-list-component.js
 import { createElement } from '../framework/render.js';
 
-
-function createTaskboardListTemplate() {
+function createTaskboardListTemplate(status) {
+    console.log(status)
+    const { statusId, label } = status;
     return (
         `
-        <div class="task-board__list" id="backlog">
-            <h2 class="task-list__title">Название списка</h2>
+        <div class="task-board__list" id="${statusId}">
+            <h2 class="task-list__title">${label}</h2>
         </div>
         `
     );
 }
 
-
 export default class TaskboardListComponent {
-    getTemplate() {
-        return createTaskboardListTemplate();
+    constructor({status}) {
+        this.status = status;
     }
 
+    getTemplate() {
+        return createTaskboardListTemplate(this.status);
+    }
 
     getElement() {
         if (!this.element) {
             this.element = createElement(this.getTemplate());
         }
-        console.log(this.element)
-
         return this.element;
     }
-
 
     removeElement() {
         this.element = null;

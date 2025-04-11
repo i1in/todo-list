@@ -109,14 +109,6 @@ body {
   flex-direction: column;
   gap: 8px;
 }
-.board-app__main .task-board__lists .task-board__list .tasks .task {
-  display: flex;
-  align-items: center;
-  padding: 20px;
-  background-color: var(--primary);
-  border-radius: var(--border-radius);
-  color: var(--color-primary);
-}
 .board-app__main .task-board__lists .task-board__list#backlog .task-list__title {
   color: rgba(0, 0, 0, 0.6);
   background-color: rgba(0, 0, 0, 0.3);
@@ -135,6 +127,30 @@ body {
   color: rgba(0, 128, 0, 0.9);
   background-color: rgba(0, 128, 0, 0.3);
 }
+.task__item {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  border-radius: var(--border-radius) !important;
+  padding: 16px;
+  background-color: var(--primary);
+}
+
+.task__item .task__edit {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  background-color: transparent;
+  border: none;
+  opacity: .5;
+  visibility: hidden;
+} 
+
+.task__item:hover .task__edit {
+  visibility: visible;
+  cursor: pointer;
+}
+
 .board-app__main .task-board__lists .task-board__list#completed .task {
   border-left: 5px solid rgba(0, 128, 0, 0.3);
 }

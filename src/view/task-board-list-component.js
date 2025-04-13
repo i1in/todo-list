@@ -1,8 +1,8 @@
 // task-board-list-component.js
 import { createElement } from '../framework/render.js';
+import { AbstractComponent } from '../framework/view/abstract-component.js';
 
 function createTaskboardListTemplate(status) {
-    console.log(status)
     const { statusId, label } = status;
     return (
         `
@@ -13,23 +13,13 @@ function createTaskboardListTemplate(status) {
     );
 }
 
-export default class TaskboardListComponent {
+export default class TaskboardListComponent extends AbstractComponent {
     constructor({status}) {
+        super();
         this.status = status;
     }
 
-    getTemplate() {
+    get template() {
         return createTaskboardListTemplate(this.status);
-    }
-
-    getElement() {
-        if (!this.element) {
-            this.element = createElement(this.getTemplate());
-        }
-        return this.element;
-    }
-
-    removeElement() {
-        this.element = null;
     }
 }

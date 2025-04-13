@@ -7,6 +7,11 @@
   --border-primary-color: rgba(0, 0, 0, 0.1);
   --font-family: system-ui, -apple-system, BlinkMacSystemFont, "Segoe UI",
     Roboto, Oxygen, Ubuntu, Cantarell, "Open Sans", "Helvetica Neue", sans-serif;
+  
+  --backlog-background: rgba(0, 0, 0, 0.3);
+  --in_process-background: rgba(0, 0, 255, 0.3);
+  --completed-background: rgba(0, 128, 0, 0.3);
+  --trashbin-background: rgba(255, 0, 0, 0.3);
 }
 
 html {
@@ -111,23 +116,23 @@ body {
 }
 .board-app__main .task-board__lists .task-board__list#backlog .task-list__title {
   color: rgba(0, 0, 0, 0.6);
-  background-color: rgba(0, 0, 0, 0.3);
+  background-color: var(--backlog-background);
 }
 .board-app__main .task-board__lists .task-board__list#backlog .task {
   border-left: 5px solid rgba(0, 0, 0, 0.3);
 }
 .board-app__main .task-board__lists .task-board__list#in-process .task-list__title {
   color: rgba(0, 0, 255, 0.6);
-  background-color: rgba(0, 0, 255, 0.3);
+  background-color: var(--in_process-background);
 }
 .board-app__main .task-board__lists .task-board__list#in-process .task {
   border-left: 5px solid rgba(0, 0, 255, 0.3);
 }
 .board-app__main .task-board__lists .task-board__list#completed > .task-list__title {
   color: rgba(0, 128, 0, 0.9);
-  background-color: rgba(0, 128, 0, 0.3);
+  background-color: var(--completed-background);
 }
-.task__item {
+.task-item {
   display: flex;
   justify-content: space-between;
   align-items: center;
@@ -136,7 +141,7 @@ body {
   background-color: var(--primary);
 }
 
-.task__item .task__edit {
+.task-item .task__edit {
   display: flex;
   justify-content: center;
   align-items: center;
@@ -146,9 +151,16 @@ body {
   visibility: hidden;
 } 
 
-.task__item:hover .task__edit {
+.task-item:hover .task__edit {
   visibility: visible;
   cursor: pointer;
+}
+
+.task-item__empty {
+  opacity: .6;
+  font-size: 20px;
+  border: 1px solid rgba(0,0,0,.3) !important;
+  justify-content: center;
 }
 
 .board-app__main .task-board__lists .task-board__list#completed .task {
@@ -156,7 +168,7 @@ body {
 }
 .board-app__main .task-board__lists .task-board__list#trashbin > .task-list__title {
   color: rgba(255, 0, 0, 0.9);
-  background-color: rgba(255, 0, 0, 0.3);
+  background-color: var(--trashbin-background);
 }
 .board-app__main .task-board__lists .task-board__list#trashbin .task {
   border-left: 5px solid rgba(255, 0, 0, 0.3);

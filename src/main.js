@@ -1,7 +1,6 @@
 import HeaderComponent from './view/header-component.js';
 import FormAddTaskComponent from './view/task-form-component.js';
 import TasksBoardPresenter from './presenter/tasks-board-presenter.js';
-import ClearButtonComponent from './view/clearButton-component.js';
 import { render, RenderPosition } from './framework/render.js';
 import TasksModel from './model/model.js';
 import { StatusLabel } from './const.js';
@@ -15,7 +14,6 @@ const statusList = Object.entries(StatusLabel).map(([statusId, label]) => ({
     statusId,
     label
 }));
-console.log(statusList)
 
 const tasksModel = new TasksModel();
 const tasksBoardPresenter = new TasksBoardPresenter(
@@ -25,11 +23,8 @@ const tasksBoardPresenter = new TasksBoardPresenter(
         statusList
     }
 )
-console.log(tasksBoardPresenter)
 
 render(new HeaderComponent(), bodyContainer, RenderPosition.BEFOREBEGIN);
 render(new FormAddTaskComponent(), formContainer);
 
 tasksBoardPresenter.init()
-
-render(new ClearButtonComponent(), taskboardSection)

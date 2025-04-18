@@ -30,6 +30,4 @@ export const tasks = [
         title: "Проспать",
         status: "trashbin"
     }
-
-
 ]

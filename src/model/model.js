@@ -18,13 +18,16 @@ export default class TasksModel extends AbstractComponent {
         const newTask = {
             id: generateID(this.tasks),
             title,
-            status: 'backlog',
+            status: 'backlog', // чтобы появилась кнопка нужно trashbin вместо backlog
         }
         this.#boardTasks.push(newTask);
         this._notifyObservers();
-        console.log("newTask: ", newTask);
-        console.log(this.#boardTasks)
         return newTask;
+    }
+
+    deleteTrashbinTasks() {
+        this.#boardTasks = this.#boardTasks.filter(task => task.status !== "trashbin");
+        this._notifyObservers();
     }
 
     addObserver(observer) {

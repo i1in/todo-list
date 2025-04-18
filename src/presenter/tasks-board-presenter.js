@@ -21,6 +21,7 @@ export default class TasksBoardPresenter {
         this.#statusList = statusList;
 
         this.#tasksModel.addObserver(this.#handleModelChange.bind(this));
+        this.clearTrashbin = this.clearTrashbin.bind(this);
     }
 
     init() {
@@ -76,7 +77,9 @@ export default class TasksBoardPresenter {
     }
 
     #renderClearButton(container) {
-        const clearButton = new ClearButtonComponent();
+        const clearButton = new ClearButtonComponent({
+            onClick: this.clearTrashbin
+        });
 
         render(clearButton, container)
     }
@@ -92,13 +95,16 @@ export default class TasksBoardPresenter {
         document.querySelector('#task-input').value = '';
     }
 
+    clearTrashbin() {
+        this.#tasksModel.deleteTrashbinTasks();
+    }
+
     #handleModelChange(){
         this.#clearBoard();
         this.#renderBoard();
     }
 
     #clearBoard() {
-        console.log("Отработал clearBoard")
         this.#tasksBoardComponent.element.innerHTML = '';
     }
 }

@@ -42,7 +42,6 @@ export default class FormAddTaskComponent extends AbstractComponent {
 
   #clickHandler = (event) => {
     event.preventDefault();
-    console.log("clickhandler")
     this.#handleClick();
   }
 }

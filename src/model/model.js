@@ -14,6 +14,17 @@ export default class TasksModel extends AbstractComponent {
         return this.#boardTasks.filter(task => task.status === status);
     }
 
+    updateTaskStatus(taskId, newStatus) {
+        console.log("updateTaskStatus: ", taskId, newStatus)
+        const task = this.#boardTasks.find(task => String(task.id) === taskId);
+        console.log("updateTaskStatus (find): ", typeof taskId)
+        if (task) { 
+            task.status = newStatus.statusId;
+            this._notifyObservers();
+        }
+        console.log("updateTaskStatus (after): ", task, this.#boardTasks)
+    }
+
     addTask(title) {
         const newTask = {
             id: generateID(this.tasks),
@@ -29,6 +40,22 @@ export default class TasksModel extends AbstractComponent {
         this.#boardTasks = this.#boardTasks.filter(task => task.status !== "trashbin");
         this._notifyObservers();
     }
+
+    swapTasks(firstId, secondId) {
+        const firstIndex = this.#boardTasks.findIndex(t => t.id == firstId);
+        const secondIndex = this.#boardTasks.findIndex(t => t.id == secondId);
+        
+        if (firstIndex === -1 || secondIndex === -1) return;
+        
+        const newTasks = [...this.#boardTasks];
+        
+        [newTasks[firstIndex], newTasks[secondIndex]] = 
+        [newTasks[secondIndex], newTasks[firstIndex]];
+        
+        this.#boardTasks = newTasks;
+        
+        this._notifyObservers();
+      }
 
     addObserver(observer) {
         this.#observers.push(observer);

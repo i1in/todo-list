@@ -42,7 +42,9 @@ export default class TasksBoardPresenter {
     #renderTasksList() {
         this.#statusList.forEach((statusItem) => {
             const tasksListComponent = new TaskboardListComponent({
-                status: statusItem
+                status: statusItem,
+                onTaskDrop: this.#handleTaskDrop.bind(this),
+                tasksModel: this.#tasksModel,
             });
 
             render(tasksListComponent, this.#tasksBoardComponent.element);
@@ -102,6 +104,10 @@ export default class TasksBoardPresenter {
     #handleModelChange(){
         this.#clearBoard();
         this.#renderBoard();
+    }
+
+    #handleTaskDrop(taskId, newStatus) {
+        this.#tasksModel.updateTaskStatus(taskId, newStatus)
     }
 
     #clearBoard() {

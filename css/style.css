@@ -163,6 +163,14 @@ body {
   justify-content: center;
 }
 
+.task-board__list:has(.task-item__selected) .task:not(.task-item__selected) {
+  opacity: .3;
+}
+
+.task.task-item__selected {
+  opacity: 0.9;
+}
+
 .board-app__main .task-board__lists .task-board__list#completed .task {
   border-left: 5px solid rgba(0, 128, 0, 0.3);
 }

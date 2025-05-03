@@ -7,7 +7,7 @@
   --border-primary-color: rgba(0, 0, 0, 0.1);
   --font-family: system-ui, -apple-system, BlinkMacSystemFont, "Segoe UI",
     Roboto, Oxygen, Ubuntu, Cantarell, "Open Sans", "Helvetica Neue", sans-serif;
-  
+
   --backlog-background: rgba(0, 0, 0, 0.3);
   --in_process-background: rgba(0, 0, 255, 0.3);
   --completed-background: rgba(0, 128, 0, 0.3);
@@ -51,6 +51,7 @@ body {
   padding: 36px;
   gap: 36px;
 }
+
 .board-app__main .task-adder__wrapper {
   display: flex;
   flex-direction: column;
@@ -61,19 +62,23 @@ body {
   width: fit-content;
   border-radius: var(--border-radius);
 }
+
 .board-app__main .task-adder__wrapper .task-adder__title {
   color: var(--color-primary);
 }
+
 .board-app__main .task-adder__wrapper .task-adder__inputs {
   display: flex;
   gap: 8px;
 }
+
 .board-app__main .task-adder__wrapper .task-adder__inputs .task-adder__input {
   padding: 8px;
   border-radius: var(--border-radius);
   border: var(--border-primary);
   background-color: var(--background);
 }
+
 .board-app__main .task-adder__wrapper .task-adder__inputs .task-adder__button {
   display: flex;
   justify-content: center;
@@ -85,53 +90,65 @@ body {
   background-color: var(--background);
   cursor: pointer;
 }
+
 .board-app__main .task-adder__wrapper .task-adder__inputs .task-adder__button .task-adder__button-text {
   font-weight: 600;
 }
+
 .board-app__main .taskboard {
   display: flex;
   flex-direction: column;
   gap: 12px;
 }
+
 .board-app__main .task-board__lists {
   display: flex;
   justify-content: space-between;
 }
+
 .board-app__main .task-board__lists .task-board__list {
   display: flex;
   flex-direction: column;
   width: 250px;
   gap: 12px;
 }
+
 .board-app__main .task-board__lists .task-board__list .task-list__title {
   width: -moz-fit-content;
   width: fit-content;
   padding: 12px 20px 12px 20px;
   border-radius: var(--border-radius);
 }
+
 .board-app__main .task-board__lists .task-board__list .tasks {
   display: flex;
   flex-direction: column;
   gap: 8px;
 }
+
 .board-app__main .task-board__lists .task-board__list#backlog .task-list__title {
   color: rgba(0, 0, 0, 0.6);
   background-color: var(--backlog-background);
 }
+
 .board-app__main .task-board__lists .task-board__list#backlog .task {
   border-left: 5px solid rgba(0, 0, 0, 0.3);
 }
+
 .board-app__main .task-board__lists .task-board__list#in-process .task-list__title {
   color: rgba(0, 0, 255, 0.6);
   background-color: var(--in_process-background);
 }
+
 .board-app__main .task-board__lists .task-board__list#in-process .task {
   border-left: 5px solid rgba(0, 0, 255, 0.3);
 }
-.board-app__main .task-board__lists .task-board__list#completed > .task-list__title {
+
+.board-app__main .task-board__lists .task-board__list#completed>.task-list__title {
   color: rgba(0, 128, 0, 0.9);
   background-color: var(--completed-background);
 }
+
 .task-item {
   display: flex;
   justify-content: space-between;
@@ -149,7 +166,7 @@ body {
   border: none;
   opacity: .5;
   visibility: hidden;
-} 
+}
 
 .task-item:hover .task__edit {
   visibility: visible;
@@ -159,7 +176,7 @@ body {
 .task-item__empty {
   opacity: .6;
   font-size: 20px;
-  border: 1px solid rgba(0,0,0,.3) !important;
+  border: 1px solid rgba(0, 0, 0, .3) !important;
   justify-content: center;
 }
 
@@ -174,17 +191,21 @@ body {
 .board-app__main .task-board__lists .task-board__list#completed .task {
   border-left: 5px solid rgba(0, 128, 0, 0.3);
 }
-.board-app__main .task-board__lists .task-board__list#trashbin > .task-list__title {
+
+.board-app__main .task-board__lists .task-board__list#trashbin>.task-list__title {
   color: rgba(255, 0, 0, 0.9);
   background-color: var(--trashbin-background);
 }
+
 .board-app__main .task-board__lists .task-board__list#trashbin .task {
   border-left: 5px solid rgba(255, 0, 0, 0.3);
 }
+
 .board-app__main .clear-button {
   display: flex;
   justify-content: end;
 }
+
 .board-app__main .clear-button .clear-button__red {
   display: flex;
   justify-content: center;
@@ -195,4 +216,17 @@ body {
   border: var(--border-primary);
   color: var(--primary);
   cursor: pointer;
+}
+
+.board__no-tasks {
+  margin: 0 auto;
+  padding: 10px;
+
+
+  font-size: 24px;
+  font-weight: 800;
+
+  color: rgba(0, 0, 0, 0.6);
+  background-color: var(--backlog-background);
+  border: var(--border-primary);
 }

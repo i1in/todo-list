@@ -1,9 +1,11 @@
+const END_POINT = 'https://681529b532debfe95dbb06c5.mockapi.io/api/tasks'
 import HeaderComponent from './view/header-component.js';
 import FormAddTaskComponent from './view/task-form-component.js';
 import TasksBoardPresenter from './presenter/tasks-board-presenter.js';
 import { render, RenderPosition } from './framework/render.js';
 import TasksModel from './model/model.js';
 import { StatusLabel } from './const.js';
+import TasksApiService from './tasks-api-service.js';
 
 
 const bodyContainer = document.querySelector('.board-app');
@@ -15,7 +17,8 @@ const statusList = Object.entries(StatusLabel).map(([statusId, label]) => ({
     label
 }));
 
-const tasksModel = new TasksModel();
+const tasksApiService = new TasksApiService(END_POINT);
+const tasksModel = new TasksModel({ tasksApiService });
 const tasksBoardPresenter = new TasksBoardPresenter(
     {
         boardContainer: taskboardSection,
